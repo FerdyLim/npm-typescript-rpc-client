@@ -2,6 +2,15 @@
   "name": "@modulae.systems/rpc-client",
   "version": "0.1.0",
   "description": "An RPC client module",
+  "keywords": [
+    "rpc",
+    "rpc-client"
+  ],
+  "homepage": "http://ferdy.sg",
+  "bugs": {
+    "url": "https://github.com/FerdyLim/npm-typescript-rpc-client/issues",
+    "email": "contact@ferdinand.sg"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,7 +23,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ferdy Lim",
+  "author": "Ferdy Lim <contact@ferdinand.sg> (http://ferdy.sg)",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.9.0",

@@ -16,3 +16,6 @@ export interface RpcError {
     description: string;
     debug?: any;
 }
+export interface RpcHeaders {
+    [key: string]: string;
+}

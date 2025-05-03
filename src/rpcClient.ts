@@ -1,14 +1,22 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import * as dotenv from "dotenv";
-import { RpcRequestModel, RpcResponseModel } from "./types";
+import { RpcHeaders, RpcRequestModel, RpcResponseModel } from "./types";
 
 dotenv.config();
 
-export async function callFunction(method: string, data: any) {
+export async function callFunction(method: string, data: any, headers?: RpcHeaders) {
     const request: RpcRequestModel = {
         method,
         data,
     }
-    const response = await axios.post(process.env.RPC_URL+"/rpc",request);
+    const fullHeaders: AxiosRequestConfig = {
+        headers: {
+            // 'Authorization': "", // future enhancements
+            ...headers,
+            'Content-Type': 'application/json',
+        },
+        responseType: "json",
+    }
+    const response = await axios.post(process.env.RPC_URL+"/rpc",request, fullHeaders);
     return response.data as RpcResponseModel;
 }

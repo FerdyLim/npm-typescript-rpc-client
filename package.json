@@ -7,6 +7,10 @@
   "files": [
     "/dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FerdyLim/npm-typescript-rpc-client.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

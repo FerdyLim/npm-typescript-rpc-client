@@ -1,12 +1,18 @@
-# Install
-```
-npm i @modulae.systems/rpc-client
-```
+# Introduction
+This is a simple RPC Client that allows easier implementation of RPC. This might be too simplified and could be difficult to customise to your exact needs, but do try it. Hope it helps simplify your development effort! Cheers~
 
 # Notice
 @modulae.systems/rpc-client is best used with
 - [Typescript](https://www.npmjs.com/package/typescript)
 - [@modulae.systems/rpc-server](https://www.npmjs.com/package/@modulae.systems/rpc-server)
+
+## Upgrade Note:
+v1.x.x is not compatible with v0.x.x. There is a breaking changes, removing callFunction() method, and replaced with callPublicMethod() and callProtectedMethod(). Updated this module to feel more like calling methods, as per the intention of RPC itself.
+
+# Install
+```
+npm i @modulae.systems/rpc-client
+```
 
 # Usage
 ### Public RPC calls (without requiring Tokens)

@@ -1,1 +1,1 @@
-export { callFunction } from "./rpcClient"
+export { callPublicMethod, callProtectedMethod } from "./rpcClient"

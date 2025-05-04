@@ -1,4 +1,4 @@
-import { callFunction } from "@modulae.systems/rpc-client";
+import { callPublicMethod, callProtectedMethod } from "@modulae.systems/rpc-client";
 import { useState } from "react"
 import { RpcObjects } from "./models";
 
@@ -30,7 +30,7 @@ export function RpcComponent() {
         const authData: RpcObjects.RequestDataAuth = {
             authKey: authKey,
         }
-        const loginResponse = await callFunction(url, RpcObjects.Methods.auth,authData);
+        const loginResponse = await callPublicMethod(url, RpcObjects.Methods.auth,authData);
         if (loginResponse.error) {
             setText(`Authorisation failed: ${loginResponse.error.code}: ${loginResponse.error.description}`);
         } else if (loginResponse.data) {
@@ -43,7 +43,7 @@ export function RpcComponent() {
     async function checkAlive() {
         console.log("ENV: URL:",url);
         console.log("ENV: KEY:",process.env.REACT_APP_AUTH_KEY);
-        const aliveResponse = await callFunction(url, RpcObjects.Methods.alive,{});
+        const aliveResponse = await callPublicMethod(url, RpcObjects.Methods.alive,{});
         console.log("SERVER RESPONSE: ",aliveResponse)
         if (aliveResponse.error) {
             setText(`Server: ${aliveResponse.error.code}: ${aliveResponse.error.description}`);
@@ -54,10 +54,7 @@ export function RpcComponent() {
     }
     
     async function getServerTime() {
-        const additionalHeaders = {
-            'Authorization': accessToken !== "" ? `Bearer ${accessToken}` : "",
-        }
-        const timeResponse = await callFunction(url, RpcObjects.Methods.time,{}, additionalHeaders);
+        const timeResponse = await callProtectedMethod(url, RpcObjects.Methods.time,{}, accessToken);
         if (timeResponse.error) {
             setText(`Server: ${timeResponse.error.code}: ${timeResponse.error.description}`);
         } else if (timeResponse.data) {

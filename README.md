@@ -38,4 +38,4 @@ For apps with React, you need to use the REACT_APP_ prefix, making the key as RE
 
 ## Future features (My personal TODO list)
 1. ~~Custom Headers support (by v1)~~
-2. Add Sample Projects to showcase what this module can do
+2. ~~Add Sample Projects to showcase what this module can do~~

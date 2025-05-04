@@ -18,7 +18,7 @@ function doSomething() {
         user: "blablabla",
         pass: "34819d7beeabb9260a5c854bc85b3e44",
     }
-    const loginResponse = await callFunction("login",loginData);
+    const loginResponse = await callFunction(process.env.RPC_URL,"login",loginData);
     if (!loginResponse.error) {
         const responseData = loginResponse.data;
         // process the data here
@@ -30,13 +30,11 @@ function doSomething() {
 }
 ```
 
-### Add this line to your ```.env``` file
+### For your ```.env``` file
 ```
-...
-RPC_URL=https://some-website.com # the RPC Server URL
-AUTH_KEY=3256531b3d0ad5b534259135bca2c1f4 # any random string
-...
+RPC_URL=http://mywebsite.com # enter the url to your rpc server, likely localhost during development
 ```
+For apps with React, you need to use the REACT_APP_ prefix, making the key as REACT_APP_RPC_URL=xxxx instead of just RPC_URL=xxxx
 
 ## Future features (My personal TODO list)
 1. ~~Custom Headers support (by v1)~~

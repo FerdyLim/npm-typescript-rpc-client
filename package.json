@@ -27,13 +27,9 @@
   "author": "Ferdy Lim <contact@ferdinand.sg> (http://ferdy.sg)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.9.0",
-    "dotenv": "^16.5.0"
+    "axios": "^1.9.0"
   },
   "devDependencies": {
-    "@types/node": "^22.15.3",
-    "dotenv-webpack": "^8.1.0",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1"
+    "@types/node": "^22.15.3"
   }
 }

@@ -1,8 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import * as dotenv from "dotenv";
 import { RpcHeaders, RpcRequestModel, RpcResponseModel } from "./types";
-
-dotenv.config();
 
 export async function callFunction(method: string, data: any, headers?: RpcHeaders) {
     try {

@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { RpcHeaders, RpcRequestModel, RpcResponseModel } from "./types";
 
-export async function callFunction(method: string, data: any, headers?: RpcHeaders) {
+export async function callFunction(url: string, method: string, data: any, headers?: RpcHeaders) {
     try {
         const request: RpcRequestModel = {
             method,
@@ -15,7 +15,7 @@ export async function callFunction(method: string, data: any, headers?: RpcHeade
             },
             responseType: "json",
         }
-        const response = await axios.post(process.env.RPC_URL+"/rpc",request, fullHeaders);
+        const response = await axios.post(url+"/rpc",request, fullHeaders);
         return response.data as RpcResponseModel;
     } catch (error) {
         return {

@@ -21,7 +21,8 @@
     "url": "git+https://github.com/FerdyLim/npm-typescript-rpc-client.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "author": "Ferdy Lim <contact@ferdinand.sg> (http://ferdy.sg)",
   "license": "ISC",

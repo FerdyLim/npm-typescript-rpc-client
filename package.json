@@ -1,6 +1,6 @@
 {
   "name": "@modulae.systems/rpc-client",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "An RPC client module",
   "keywords": [
     "rpc",

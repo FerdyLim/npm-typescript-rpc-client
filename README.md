@@ -34,6 +34,7 @@ function doSomething() {
 ```
 ...
 RPC_URL=https://some-website.com # the RPC Server URL
+AUTH_KEY=3256531b3d0ad5b534259135bca2c1f4 # any random string
 ...
 ```
 
